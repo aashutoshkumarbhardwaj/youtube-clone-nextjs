@@ -1,25 +1,29 @@
-export function Videocard(){
-    return <div>
-        <img src="images (1).jpg" />
-        <div className="grid grid-cols-12 ">
-            <div className="col span-2">
-                <img className={"rounded-full w-20 h-20"} src="images (1).jpg" />
+export function Videocard(props: any) {
+    return <div className="p-3">
+        <div className="w-full max-w-sm">
+            {/* Video Thumbnail */}
+            <img src={props.image} alt="Video thumbnail" className="w-full rounded-md" />
 
-            </div>
-            <div className="col span-11 pl-5">
-                the jagjit singh the great singer
+            {/* Video Info */}
+            <div className="grid grid-cols-12 gap-1 mt-3">
+                {/* Channel Image */}
+                <div className="col-span-2">
+                    <img src={props.thumbnail} alt="Channel DP" className="rounded-full w-10 h-10 object-cover" />
+                </div>
 
+                {/* Title and Channel Info */}
+                <div className="col-span-10">
+                    <div className="font-medium text-sm text-white">
+                        {props.title}
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                        {props.channelName}
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                        {props.views} • {props.uploadDate}
+                    </div>
+                </div>
             </div>
-            <div className="col-span-11 pl-5 text-gray-500 text-base">
-                aashutosh kumar
-            </div>
-            <div className="col-span-11 pl-5">
-                1.2M views . 2 days ago
-
-            </div>
-
         </div>
-
-      
-    </div>
+    </div>;
 }
